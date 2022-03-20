@@ -9,6 +9,7 @@ const MyPosts = (props) => {
     const addPost = () => {
         let text = newPost.current.value;
         props.state.addNewPost(text);
+        console.log(ss);
     }
 
     return (
