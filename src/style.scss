@@ -1,0 +1,255 @@
+body {
+    background-color: #f6f6fb;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #615dfa;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+    .header_menu_icon {
+        margin-left: 20px;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.3s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.sidebar {
+    font-size: 14px;
+    width: 300px;
+    flex-shrink: 0;
+    background-color: #fff;
+    height: calc(100vh - 80px);
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-left: 15px;
+        padding-top: 30px;
+    }
+        li {
+            padding: 0;
+            margin-bottom: 10px;
+            position: relative;
+            &.sidebar_profile a {
+            &:before {
+                background-image: url('img/icons/profile_icon.png');
+            }
+            &.sidebar_active_tab:before {
+                background-image: url('img/icons/profile_icon_active.png');
+            }
+        }
+        &.sidebar_messages a {
+            &:before {
+                height: 14px!important;
+                background-image: url('img/icons/messages_icon.png');
+            }
+            &.sidebar_active_tab:before {
+                background-image: url('img/icons/messages_icon_active.png');
+            }
+        }
+        &.sidebar_news a {
+            &:before {
+                background-image: url('img/icons/news_icon.png');
+            }
+            &.sidebar_active_tab:before {
+                background-image: url('img/icons/news_icon_active.png');
+            }
+        }
+        &.sidebar_music a {
+            &:before {
+                background-image: url('img/icons/music_icon.png');
+            }
+            &.sidebar_active_tab:before {
+                background-image: url('img/icons/music_icon_active.png');
+            }
+        }
+        &.sidebar_settings a {
+            &:before {
+                background-image: url('img/icons/settings_icon.png');
+            }
+            &.sidebar_active_tab:before {
+                background-image: url('img/icons/settings_icon_active.png');
+            }
+        }
+    }
+    &_main_container {
+        display: flex;
+    }
+    a {
+        font-weight: 500;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+        width: 240px;
+        height: 50px;
+        padding: 13px;
+        margin: 0;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        cursor: pointer;
+        border-radius: 12px;
+        transition: all .15s ease-in-out;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:hover:not(.sidebar_active_tab) {
+            width: 270px;
+            box-shadow: 0 0 15px 4px rgba(200, 200, 200, 0.35);
+            &:before {
+                margin-right: 20px;
+            }
+        }
+        &:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-left: 5px;
+            display: block;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            opacity: 0.9;
+            transition: all .2s ease-in-out;
+        }
+        &.sidebar_active_tab {
+            width: 270px;
+            background-color: #23d2e2;
+            color: #fff;
+        }
+    }
+}
+
+.content {
+    padding: 15px;
+}
+
+.sidebar.small {
+    width: 76px;
+    a {
+        width: 46px;
+        &:before {
+            margin: 0;
+        }
+        span {
+            display: none;
+        }
+        &.sidebar_active_tab {
+            width: 46px!important;
+        }
+        &:hover {
+            width: 46px!important;
+            &:before {
+                margin-right: 0;
+            }
+        }
+    }
+    li {
+        & a:hover ~ span {
+            display: block;
+        }
+    }
+}
+
+li > span {
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    transform: translateY(-50%);
+    padding: 0 12px;
+    border-radius: 20px;
+    background-color: #1f1f1fe0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    display: none;
+}
+
+.my_posts {
+    textarea {
+        width: 200px;
+        height: 35px;
+        border-radius: 5px;
+        padding: 7px;
+        font-size: 14px;
+        font-family: inherit;
+        transition: 0.1s ease-in-out;
+        &:focus {
+            width: 600px;
+            height: 70px;
+            border: none;
+            outline: 2px solid #094a50;
+            box-shadow: 0 0 10px 2px rgba(15, 28, 73, 0.35)
+        }
+    }
+}
+
+.post {
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 7px 0 rgba(94,152,154,.1);
+    max-width: 600px;
+    margin-top: 20px;
+    &_sender_message {
+        padding: 24px 28px 0 28px;
+        .post_sender {
+            display: flex;
+            align-items: center;
+            &_ava {
+                margin-right: 10px;
+            }
+            &_info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 35px;
+                &_name {
+                    color: #202148;
+                    font-weight: 700;
+                }
+                &_date {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    &_message {
+        margin-top: 20px;
+        p {
+            margin: 0;
+        }
+    }
+    &_count_likes {
+        border-top: 1px solid #eaeaf5;
+        display: flex;
+        align-items: center;
+        width: 90%;
+        height: 45px;
+        margin: 20px auto 0 auto;
+        span {
+            font-weight: 500;
+            color: #1b1c38;
+        }
+    }
+}
+
+.content {
+    white-space: pre-line;
+    word-break: break-all;
+}

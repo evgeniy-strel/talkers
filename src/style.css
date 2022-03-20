@@ -1,0 +1,318 @@
+body {
+  background-color: #f6f6fb;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #615dfa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header .header_menu_icon {
+  margin-left: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header .header_menu_icon:hover {
+  opacity: 1;
+}
+
+.sidebar {
+  font-size: 14px;
+  width: 300px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background-color: #fff;
+  height: calc(100vh - 80px);
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 15px;
+  padding-top: 30px;
+}
+
+.sidebar li {
+  padding: 0;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.sidebar li.sidebar_profile a:before {
+  background-image: url("img/icons/profile_icon.png");
+}
+
+.sidebar li.sidebar_profile a.sidebar_active_tab:before {
+  background-image: url("img/icons/profile_icon_active.png");
+}
+
+.sidebar li.sidebar_messages a:before {
+  height: 14px !important;
+  background-image: url("img/icons/messages_icon.png");
+}
+
+.sidebar li.sidebar_messages a.sidebar_active_tab:before {
+  background-image: url("img/icons/messages_icon_active.png");
+}
+
+.sidebar li.sidebar_news a:before {
+  background-image: url("img/icons/news_icon.png");
+}
+
+.sidebar li.sidebar_news a.sidebar_active_tab:before {
+  background-image: url("img/icons/news_icon_active.png");
+}
+
+.sidebar li.sidebar_music a:before {
+  background-image: url("img/icons/music_icon.png");
+}
+
+.sidebar li.sidebar_music a.sidebar_active_tab:before {
+  background-image: url("img/icons/music_icon_active.png");
+}
+
+.sidebar li.sidebar_settings a:before {
+  background-image: url("img/icons/settings_icon.png");
+}
+
+.sidebar li.sidebar_settings a.sidebar_active_tab:before {
+  background-image: url("img/icons/settings_icon_active.png");
+}
+
+.sidebar_main_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sidebar a {
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 240px;
+  height: 50px;
+  padding: 13px;
+  margin: 0;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 12px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.sidebar a:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar a:hover:not(.sidebar_active_tab) {
+  width: 270px;
+  -webkit-box-shadow: 0 0 15px 4px rgba(200, 200, 200, 0.35);
+          box-shadow: 0 0 15px 4px rgba(200, 200, 200, 0.35);
+}
+
+.sidebar a:hover:not(.sidebar_active_tab):before {
+  margin-right: 20px;
+}
+
+.sidebar a:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  margin-left: 5px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.9;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.sidebar a.sidebar_active_tab {
+  width: 270px;
+  background-color: #23d2e2;
+  color: #fff;
+}
+
+.content {
+  padding: 15px;
+}
+
+.sidebar.small {
+  width: 76px;
+}
+
+.sidebar.small a {
+  width: 46px;
+}
+
+.sidebar.small a:before {
+  margin: 0;
+}
+
+.sidebar.small a span {
+  display: none;
+}
+
+.sidebar.small a.sidebar_active_tab {
+  width: 46px !important;
+}
+
+.sidebar.small a:hover {
+  width: 46px !important;
+}
+
+.sidebar.small a:hover:before {
+  margin-right: 0;
+}
+
+.sidebar.small li a:hover ~ span {
+  display: block;
+}
+
+li > span {
+  position: absolute;
+  top: 50%;
+  left: 55px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 0 12px;
+  border-radius: 20px;
+  background-color: #1f1f1fe0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 24px;
+  display: none;
+}
+
+.my_posts textarea {
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 14px;
+  font-family: inherit;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.my_posts textarea:focus {
+  width: 600px;
+  height: 70px;
+  border: none;
+  outline: 2px solid #094a50;
+  -webkit-box-shadow: 0 0 10px 2px rgba(15, 28, 73, 0.35);
+          box-shadow: 0 0 10px 2px rgba(15, 28, 73, 0.35);
+}
+
+.post {
+  border-radius: 12px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 7px 0 rgba(94, 152, 154, 0.1);
+          box-shadow: 0 0 7px 0 rgba(94, 152, 154, 0.1);
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.post_sender_message {
+  padding: 24px 28px 0 28px;
+}
+
+.post_sender_message .post_sender {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post_sender_message .post_sender_ava {
+  margin-right: 10px;
+}
+
+.post_sender_message .post_sender_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 35px;
+}
+
+.post_sender_message .post_sender_info_name {
+  color: #202148;
+  font-weight: 700;
+}
+
+.post_sender_message .post_sender_info_date {
+  font-size: 12px;
+}
+
+.post_message {
+  margin-top: 20px;
+}
+
+.post_message p {
+  margin: 0;
+}
+
+.post_count_likes {
+  border-top: 1px solid #eaeaf5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  height: 45px;
+  margin: 20px auto 0 auto;
+}
+
+.post_count_likes span {
+  font-weight: 500;
+  color: #1b1c38;
+}
+
+.content {
+  white-space: pre-line;
+  word-break: break-all;
+}
+/*# sourceMappingURL=style.css.map */
