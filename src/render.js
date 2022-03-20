@@ -17,5 +17,5 @@ export let rerenderEntireTree = () => {
 };
 
 let ss = () => {
-
+  console.log(5);
 }
